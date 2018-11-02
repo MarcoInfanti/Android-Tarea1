@@ -9,12 +9,12 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_sig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="114dp"
-        android:layout_marginLeft="114dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginBottom="40dp"
         android:onClick="listView"
         android:text="@string/title_button"
         app:layout_constraintBottom_toBottomOf="parent"
