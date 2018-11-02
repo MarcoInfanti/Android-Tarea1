@@ -56,7 +56,7 @@ public class ProductListAdapter  extends
 
         public ProductViewHolder(View itemView, ProductListAdapter adapter) {
             super(itemView);
-            productItemView = itemView.findViewById(R.id.word);
+            productItemView = itemView.findViewById(R.id.product_name);
             this.mAdapter = adapter;
         }
 
