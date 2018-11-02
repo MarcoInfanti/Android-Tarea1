@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ListadeArticulos</string>
+    <string name="title_button">Agregar Artículo</string>
 </resources>
