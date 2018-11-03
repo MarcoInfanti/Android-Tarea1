@@ -7,65 +7,63 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.LinkedList;
 
-public class ProductListAdapter  extends
-        RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>{
 
+public class ProductListAdapter  extends BaseAdapter {
+
+     Context contexto;
     private final LinkedList<String> mProductList;
     private LayoutInflater mInflater;
 
-    public ProductListAdapter(Context context, LinkedList<String> wordList) {
-        mInflater = LayoutInflater.from(context);
-        this.mProductList = wordList;
-    }
 
-
-    @NonNull
-
-    @Override
-    public ProductListAdapter.ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View mItemView = mInflater.inflate(R.layout.productlist_item, parent, false);
-        return new ProductViewHolder(mItemView, this);
-
+    public ProductListAdapter(Context conexto,LinkedList<String> mProductList )
+    {
+        this.contexto = conexto;
+        this.mProductList = mProductList;
+        mInflater = (LayoutInflater)conexto.getSystemService(conexto.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
-    public void onBindViewHolder(ProductViewHolder holder, int position) {
-        String mCurrent = mProductList.get(position);
-        holder.productItemView.setText(mCurrent);
-
-    }
-
-    @Override
-    public int getItemCount() {
+    public int getCount() {
         return mProductList.size();
     }
 
-
-
-
-
-    class ProductViewHolder extends RecyclerView.ViewHolder {
-
-        public final TextView productItemView;
-        final ProductListAdapter mAdapter;
-
-
-        public ProductViewHolder(View itemView, ProductListAdapter adapter) {
-            super(itemView);
-            productItemView = itemView.findViewById(R.id.product_name);
-            this.mAdapter = adapter;
-        }
-
-
+    @Override
+    public Object getItem(int position) {
+        return null;
     }
 
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int i, View convertView, ViewGroup parent) {
+        final View vista = mInflater.inflate(R.layout.productlist_item, null);
+
+        TextView productName = (TextView) vista.findViewById(R.id.listaproductos);
+        ImageView imagen = (ImageView) vista.findViewById(R.id.ivImagen);
+
+        productName.setText(mProductList.get(i));
+
+/*
+        productName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });*/
 
 
+        return vista;
 
+    }
 }
 
 
