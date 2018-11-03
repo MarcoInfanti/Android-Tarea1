@@ -24,9 +24,8 @@ public class listActivity extends AppCompatActivity {
             ProductList.addLast("Artículo " + j);
         }
         listview = (ListView) findViewById(R.id.listaproductos);
-        listview.setAdapter(new ProductListAdapter(this,ProductList));
-
-
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, ProductList);
+        listview.setAdapter(adapter);
 
     }
 }
