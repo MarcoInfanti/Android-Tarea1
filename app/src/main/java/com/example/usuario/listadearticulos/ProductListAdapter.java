@@ -11,14 +11,16 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 
 public class ProductListAdapter  extends BaseAdapter {
 
-     Context contexto;
+    Context contexto;
     private final LinkedList<String> mProductList;
     private LayoutInflater mInflater;
+    ArrayList<String> selectedItems;
 
 
     public ProductListAdapter(Context conexto,LinkedList<String> mProductList )
@@ -51,7 +53,22 @@ public class ProductListAdapter  extends BaseAdapter {
         ImageView imagen = (ImageView) vista.findViewById(R.id.ivImagen);
 
         productName.setText(mProductList.get(i));
+        productName.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String selectedItem = ((TextView) v).getText().toString();
+                if(selectedItems.contains(selectedItem))
+                    selectedItems.remove(selectedItem); //remove deselected item from the list of selected items
 
+                else
+                    selectedItems.add(selectedItem); //add selected item to the list of selected items
+
+
+            }
+
+
+
+        });
 /*
         productName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +81,8 @@ public class ProductListAdapter  extends BaseAdapter {
         return vista;
 
     }
+
+
 }
 
 
