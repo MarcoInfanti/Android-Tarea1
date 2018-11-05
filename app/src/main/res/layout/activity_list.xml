@@ -8,12 +8,24 @@
     android:orientation="vertical"
     >
 
+    /**
+
+    * Lista de Articulos que tiene la aplicacion
+
+    */
+
     <ListView
         android:id="@+id/listaproductos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="464dp"
 
         />
+
+    /**
+
+    * Boton que agrega los articulos al carrito
+
+    */
 
     <Button
         android:id="@+id/btshow"

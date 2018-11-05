@@ -7,6 +7,11 @@
     tools:context=".MainActivity"
     android:id="@+id/relativeLayout">
 
+    /**
+
+    * Boton que lleva a la actividad donde se agregan los articulos
+
+    */
 
     <Button
         android:id="@+id/button_sig"
@@ -20,6 +25,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    /**
+
+    * Texto donde se muestran los articulos seleccionados
+
+    */
 
     <TextView
         android:id="@+id/replyprod"
