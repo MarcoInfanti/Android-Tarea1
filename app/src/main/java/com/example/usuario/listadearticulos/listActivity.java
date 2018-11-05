@@ -19,7 +19,6 @@ public class listActivity extends AppCompatActivity {
 
     ListView listview;
     ArrayList<String> selectedItems;
-    // String [] products =new String[];
     LinkedList<String> ProductList = new LinkedList<>();
     private LayoutInflater mInflater;
 
@@ -29,7 +28,7 @@ public class listActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         selectedItems=new ArrayList<String>();
     }
-    
+
     public void onStart(){
         super.onStart();
         //  final View vista = mInflater.inflate(R.layout.productlist_item, null);

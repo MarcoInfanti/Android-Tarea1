@@ -22,63 +22,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_id_1"
-        android:layout_height="wrap_content"
+        android:id="@+id/replyprod"
         android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_2"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_3"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_4"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_5"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_6"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_7"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_8"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_9"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/text_view_id_10"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="52dp"
+        tools:ignore="MissingConstraints"
+        />
 
 </android.support.constraint.ConstraintLayout>
