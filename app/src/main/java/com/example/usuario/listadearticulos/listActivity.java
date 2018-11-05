@@ -1,5 +1,6 @@
 package com.example.usuario.listadearticulos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import java.util.LinkedList;
 public class listActivity extends AppCompatActivity {
 
     //Campos de la clase
+    String selItems;
     ListView listview;
     ArrayList<String> selectedItems;
     LinkedList<String> ProductList = new LinkedList<>();
@@ -63,18 +65,24 @@ public class listActivity extends AppCompatActivity {
         });
     }
 
+    public static final String EXTRA_REPLY =
+            "com.example.android.Android-Tarea1.extra.REPLY";
+
      /**
      * Método que muestra los articulos seleccionados
      */
     public void showSelectedItems(View view){
-        String selItems="";
+        selItems = selItems +
         for(String item:selectedItems){
             if(selItems=="")
                 selItems=item;
             else
-                selItems+="/"+item;
+                selItems+= "\n\n" +item;
         }
-        Toast.makeText(this, selItems, Toast.LENGTH_LONG).show();
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, selItems);
+        setResult(RESULT_OK, replyIntent);
+        finish();
     }
     //Cierre del método
 

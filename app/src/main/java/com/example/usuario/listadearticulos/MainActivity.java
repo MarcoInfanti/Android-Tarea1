@@ -13,11 +13,14 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
 
+    TextView product;
+    public static final int TEXT_REQUEST = 1;
+
     /**
      * Método que muestra la pantalla principal de la aplicacion
      */
-        TextView product;
-        @Override
+
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+        
     //Cierre del método
 
     /**
@@ -41,11 +45,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void listView(View view){
         Intent intent = new Intent(this, listActivity.class);
-        startActivity(intent);
-
-
+        startActivityForResult(intent, TEXT_REQUEST);
     }
     //Cierre del método
+
+    public void onActivityResult(int requestCode, int resultCode,Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String reply = data.getStringExtra(listActivity.EXTRA_REPLY);
+                product.setText(reply);
+            }
+        }
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
